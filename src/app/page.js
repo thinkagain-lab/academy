@@ -532,9 +532,9 @@ export default function Home() {
             </p>
             
             <div className="flex justify-center gap-4">
-              <a href="#" className="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
-              <a href="#" className="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
-              <a href="#" className="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+              <a href="https://www.facebook.com/thinkagainlab" className="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
+              <a href="https://www.instagram.com/think_again_lab_official/" className="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+              <a href="https://www.linkedin.com/company/thinkagainlab" className="bg-blue-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
             </div>
           </div>
         </section>
