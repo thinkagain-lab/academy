@@ -310,8 +310,9 @@ export default function Home() {
                     <p className="text-gray-300 mb-4">(Ex-ESRI, Ex-ISRO)</p>
 
                     <div className="flex gap-3 mb-6">
-                      <a href="#" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
-                      <a href="#" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
+                      <a href="https://www.facebook.com/suryadeb.chakraborty" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
+                      <a href="https://www.instagram.com/suryadeb" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+                      <a href="https://www.linkedin.com/in/dr-surya-deb-chakraborty-20013922" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
                     </div>
 
                     <div className="border-t border-gray-700 pt-4">
@@ -353,9 +354,9 @@ export default function Home() {
                     </div>
 
                     <div className="flex gap-3 mb-6">
-                      <a href="#" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
-                      <a href="#" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
-                      <a href="#" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
+                      <a href="https://www.facebook.com/ThinkerArijitHajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
+                      <a href="https://www.instagram.com/aarijithajra_official" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+                      <a href="https://www.linkedin.com/in/thinkerarijithajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
                     </div>
 
                     <div className="border-t border-gray-700 pt-4">
