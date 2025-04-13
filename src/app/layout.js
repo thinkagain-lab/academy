@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'AI & Remote Sensing GIS Masterclass',
+  title: 'Think Again Lab Academy',
   description: 'Join our comprehensive masterclass on Artificial Intelligence and Remote Sensing GIS applications with expert instructors.',
 };
 
