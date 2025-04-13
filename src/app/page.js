@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   // State for FAQ toggle
@@ -550,11 +551,20 @@ export default function Home() {
             <p className="text-gray-400">© 2025 Think Again Lab. All rights reserved.</p>
           </div>
           
+
           <div className="flex justify-center gap-6 mb-6">
-            <a href="#" className="text-gray-400 hover:text-green-500">About Us</a>
-            <a href="#" className="text-gray-400 hover:text-green-500">Contact</a>
-            <a href="/privacy-policy" className="text-gray-400 hover:text-green-500">Privacy Policy</a>
-            <a href="/terms-and-conditions" className="text-gray-400 hover:text-green-500">Terms of Service</a>
+            <Link href="#" passHref>
+              <a className="text-gray-400 hover:text-green-500">About Us</a>
+            </Link>
+            <Link href="#" passHref>
+              <a className="text-gray-400 hover:text-green-500">Contact</a>
+            </Link>
+            <Link href="/privacy-policy" passHref>
+              <a className="text-gray-400 hover:text-green-500">Privacy Policy</a>
+            </Link>
+            <Link href="/terms-and-conditions" passHref>
+              <a className="text-gray-400 hover:text-green-500">Terms of Service</a>
+            </Link>
           </div>
           
         </footer>
