@@ -1,8 +1,25 @@
 'use client';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function TermsAndConditions() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
+    <div className="bg-gray-900 text-white min-h-screen">
+            <header className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+              <div className="w-30 h-30 relative">
+                <Image 
+                  src="https://raw.githubusercontent.com/thinkagain-lab/academy/827d563df1ae8a49ff856defe56e1e0fb756e77d/public/TalLogoRound.png" 
+                  alt="Think Again Lab Logo" 
+                  width={100} 
+                  height={100}
+                  className="rounded-md"
+                />
+              </div>
+              <a href="#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white  inline-block px-8 py-3 rounded-full font-bold transition hover:scale-105 hover:bg-green-400">
+                Register Now
+              </a>
+            </header>
+    <div className="max-w-4xl mx-auto px-4 py-12 text-white">
       <h1 className="text-3xl font-bold mb-8 text-center text-[#212121]">TERMS AND CONDITIONS</h1>
       
       <div className="space-y-8">
@@ -256,6 +273,28 @@ export default function TermsAndConditions() {
           </p>
         </section>
       </div>
+    </div>
+    <footer className="py-8 text-center border-t border-gray-700 mt-12">
+          <div className="mb-6">
+            <Image 
+              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/BBBBBBBBBBBBBBBB.png" 
+              alt="Think Again Lab Logo" 
+              width={200} 
+              height={200}
+              className="mx-auto mb-4"
+            />
+            <p className="text-gray-400">© 2025 Think Again Lab. All rights reserved.</p>
+          </div>
+          
+
+          <div className="flex justify-center gap-6 mb-6">
+            <Link href="#" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
+            <Link href="/privacy-policy" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
+            <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
+            <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>
+          </div>
+          
+        </footer>
     </div>
   );
 }

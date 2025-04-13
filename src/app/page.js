@@ -554,18 +554,10 @@ export default function Home() {
           
 
           <div className="flex justify-center gap-6 mb-6">
-            <Link href="#" passHref>
-              <a className="text-gray-400 hover:text-green-500">About Us</a>
-            </Link>
-            <Link href="#" passHref>
-              <a className="text-gray-400 hover:text-green-500">Contact</a>
-            </Link>
-            <Link href="/privacy-policy" passHref>
-              <a className="text-gray-400 hover:text-green-500">Privacy Policy</a>
-            </Link>
-            <Link href="/terms-and-conditions" passHref>
-              <a className="text-gray-400 hover:text-green-500">Terms of Service</a>
-            </Link>
+            <Link href="#" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
+            <Link href="/privacy-policy" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
+            <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
+            <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>
           </div>
           
         </footer>
