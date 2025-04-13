@@ -20,7 +20,7 @@ export default function TermsAndConditions() {
               </a>
             </header>
     <div className="max-w-4xl mx-auto px-4 py-12 text-white">
-      <h1 className="text-3xl font-bold mb-8 text-center text-[#212121]">TERMS AND CONDITIONS</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center text-white">TERMS AND CONDITIONS</h1>
       
       <div className="space-y-8">
         <section>
