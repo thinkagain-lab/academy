@@ -133,7 +133,7 @@ export default function Home() {
         <header className="py-6 flex justify-between items-center">
           <div className="w-30 h-30 relative">
             <Image 
-              src="/TalLogoRound.png" 
+              src="https://raw.githubusercontent.com/thinkagain-lab/academy/827d563df1ae8a49ff856defe56e1e0fb756e77d/public/TalLogoRound.png" 
               alt="Think Again Lab Logo" 
               width={100} 
               height={100}
@@ -150,7 +150,7 @@ export default function Home() {
         <section className="relative py-12 px-6 text-center rounded-xl bg-gray-900 overflow-hidden">
           {/* Background image first */}
           <Image
-            src="/background.png"
+            src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/background.png"
             alt="Hero Background"
             fill
             className="object-cover z-0"
@@ -241,7 +241,7 @@ export default function Home() {
             <div className="flex-1 min-w-[300px]">
               <div className="relative h-80 w-full border-4 border-blue-500 rounded-xl overflow-hidden">
                 <Image
-                  src="/application_1.png"
+                  src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/application_1.png"
                   alt="AI Earth Observation Applications"
                   fill
                   className="object-cover"
@@ -296,7 +296,7 @@ export default function Home() {
                   {/* Image */}
                   <div className="relative h-150 w-full">
                     <Image 
-                      src="/SuryaDeb.jpg" 
+                      src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/SuryaDeb.jpg" 
                       alt="Dr. Surya Deb Chakraborty" 
                       fill
                       className="object-cover"
@@ -336,7 +336,7 @@ export default function Home() {
                   {/* Image */}
                   <div className="relative h-150 w-full">
                     <Image 
-                      src="/AarijitHajra.jpg" 
+                      src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/AarijitHajra.jpg" 
                       alt="Aarijit Hajra" 
                       fill
                       className="object-cover"
@@ -511,7 +511,7 @@ export default function Home() {
         <section className="bg-gray-800 rounded-xl py-12 px-6 my-16 text-center">
           <div className="mb-6">
             <Image 
-              src="/TalLogoRound.png" 
+              src="https://raw.githubusercontent.com/thinkagain-lab/academy/827d563df1ae8a49ff856defe56e1e0fb756e77d/public/TalLogoRound.png" 
               alt="Think Again Lab Logo" 
               width={150} 
               height={150}
@@ -541,7 +541,7 @@ export default function Home() {
         <footer className="py-8 text-center border-t border-gray-700 mt-12">
           <div className="mb-6">
             <Image 
-              src="/BBBBBBBBBBBBBBBB.png" 
+              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/BBBBBBBBBBBBBBBB.png" 
               alt="Think Again Lab Logo" 
               width={200} 
               height={200}
