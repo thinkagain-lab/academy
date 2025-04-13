@@ -203,6 +203,14 @@ export default function Home() {
           ))}
         </section>
 
+        {/* CTA after Features */}
+        <div className="text-center my-8">
+          <p className="text-xl mb-6">Don't miss these exclusive benefits! Early registrants get additional bonuses.</p>
+          <a href="#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-8 py-3 rounded-full font-bold transition hover:scale-105 inline-block">
+            Claim Your Spot & Bonuses Now
+          </a>
+        </div>
+
 
         
         {/* Why Join */}
@@ -280,99 +288,115 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-12">
+            <p className="text-xl mb-6">See yourself in one of these categories? This masterclass is crafted for you!</p>
+            <a href="#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-8 py-3 rounded-full font-bold transition hover:scale-105 inline-block">
+              Reserve Your Place Today
+            </a>
+          </div>
 
         </section>
 
         {/* Team Section */}
-        <section className="my-16">
-          <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">
-            Our Team
-          </h2>
+        <section className="my-16 ">
+  <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text ">
+    Mentor and Host
+  </h2>
 
-          <div className="flex flex-col md:flex-row gap-8 justify-center flex-wrap">
-            {/* Dr. Surya Deb Chakraborty Card */}
-            <div className="group w-full max-w-xl transition-all flex flex-col">
-              <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
-                <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-full">
-                  {/* Image */}
-                  <div className="relative h-150 w-full">
-                    <Image 
-                      src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/SuryaDeb.jpg" 
-                      alt="Dr. Surya Deb Chakraborty" 
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col justify-between flex-grow">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">DR. SURYA DEB CHAKRABORTY</h3>
-                    <p className="text-blue-500 font-bold mb-2">Mentor</p>
-                    <p className="text-gray-300 mb-1">Senior Analyst, University of Dubai</p>
-                    <p className="text-gray-300 mb-4">(Ex-ESRI, Ex-ISRO)</p>
-
-                    <div className="flex gap-3 mb-6">
-                      <a href="https://www.facebook.com/suryadeb.chakraborty" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
-                      <a href="https://www.instagram.com/suryadeb" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
-                      <a href="https://www.linkedin.com/in/dr-surya-deb-chakraborty-20013922" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
-                    </div>
-
-                    <div className="border-t border-gray-700 pt-4">
-                      <p className="mb-3">
-                        Dr. Chakraborty is a Senior Analyst at the University of Dubai with over 15 years of experience in GIS and Remote Sensing applications. His impressive career includes valuable roles at industry giants ESRI and the Indian Space Research Organisation (ISRO).
-                      </p>
-                      <p className="mb-3">
-                        Specializing in the integration of AI with geospatial technologies, Dr. Chakraborty has led numerous projects in urban planning, environmental monitoring, and disaster management. His research has been published in leading international journals and has contributed significantly to the field of GeoAI.
-                      </p>
-                      <p>
-                        As an educator and industry expert, Dr. Chakraborty has trained hundreds of professionals and students in advanced geospatial techniques and is passionate about sharing practical knowledge that bridges theory and real-world applications.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div className="flex flex-col md:flex-row gap-8 justify-center flex-wrap">
+    {/* Dr. Surya Deb Chakraborty Card */}
+    <div className="group w-full max-w-xl transition-all flex flex-col">
+      <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
+        <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-[1180px]">
+          {/* Image */}
+          <div className="relative h-full w-full">
+            <Image 
+              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/SuryaDeb.jpg" 
+              alt="Dr. Surya Deb Chakraborty" 
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="p-6 flex flex-col h-full">
+            <div>
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">DR. SURYA DEB CHAKRABORTY</h3>
+              <p className="text-blue-500 font-bold mb-2">Mentor</p>
+              <p className="text-gray-300 mb-1">Senior Analyst, University of Dubai</p>
+              <p className="text-gray-300 mb-4">(Ex-ESRI, Ex-ISRO)</p>
             </div>
 
-            {/* Aarijit Hajra Card */}
-            <div className="group w-full max-w-xl transition-all flex flex-col">
-              <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
-                <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-full">
-                  {/* Image */}
-                  <div className="relative h-150 w-full">
-                    <Image 
-                      src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/AarijitHajra.jpg" 
-                      alt="Aarijit Hajra" 
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col justify-between flex-grow">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">AARIJIT HAJRA</h3>
-                    <p className="text-blue-500 font-bold mb-2">Host</p>
-                    <p className="text-gray-300 mb-1">CEO, THINK AGAIN LAB</p>
-                    <div className="flex items-center gap-1 mb-4">
-                      <sub className="text-gray-300">aka</sub>
-                      <h2 className="text-gray-300">ROBOT MAN OF INDIA</h2>
-                    </div>
+            <div className="flex gap-3 mb-6">
+              <a href="https://www.facebook.com/suryadeb.chakraborty" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
+              <a href="https://www.instagram.com/suryadeb" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+              <a href="https://www.linkedin.com/in/dr-surya-deb-chakraborty-20013922" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
+            </div>
 
-                    <div className="flex gap-3 mb-6">
-                      <a href="https://www.facebook.com/ThinkerArijitHajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
-                      <a href="https://www.instagram.com/aarijithajra_official" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
-                      <a href="https://www.linkedin.com/in/thinkerarijithajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
-                    </div>
-
-                    <div className="border-t border-gray-700 pt-4">
-                      <p className="mb-3">
-                        Aarijit Hajra, known as the "Robot Man of India," is the CEO of THINK AGAIN LAB. With a passion for technology and innovation, he hosts this program to bring cutting-edge knowledge to participants.
-                      </p>
-                      <p>
-                        His expertise in robotics and technology education has made him a recognized figure in the industry, working to bridge the gap between advanced technologies and practical applications.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="border-t border-gray-700 pt-4 flex-1 overflow-y-auto">
+              <p className="mb-3">
+                Dr. Chakraborty is a Senior Analyst at the University of Dubai with over 15 years of experience in GIS and Remote Sensing applications. His impressive career includes valuable roles at industry giants ESRI and the Indian Space Research Organisation (ISRO).
+              </p>
+              <p className="mb-3">
+                Specializing in the integration of AI with geospatial technologies, Dr. Chakraborty has led numerous projects in urban planning, environmental monitoring, and disaster management. His research has been published in leading international journals and has contributed significantly to the field of GeoAI.
+              </p>
+              <p>
+                As an educator and industry expert, Dr. Chakraborty has trained hundreds of professionals and students in advanced geospatial techniques and is passionate about sharing practical knowledge that bridges theory and real-world applications.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </div>
+
+    {/* Aarijit Hajra Card */}
+    <div className="group w-full max-w-xl transition-all flex flex-col">
+      <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
+        <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-[1180px]">
+          {/* Image */}
+          <div className="relative h-full w-full">
+            <Image 
+              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/AarijitHajra.jpg" 
+              alt="Aarijit Hajra" 
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="p-6 flex flex-col h-full">
+            <div>
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">AARIJIT HAJRA</h3>
+              <p className="text-blue-500 font-bold mb-2">Host</p>
+              <p className="text-gray-300 mb-1">CEO, THINK AGAIN LAB</p>
+              <div className="flex items-center gap-1 mb-4">
+                <sub className="text-gray-300">aka</sub>
+                <h2 className="text-gray-300">ROBOT MAN OF INDIA</h2>
+              </div>
+            </div>
+
+            <div className="flex gap-3 mb-6">
+              <a href="https://www.facebook.com/ThinkerArijitHajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
+              <a href="https://www.instagram.com/aarijithajra_official" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+              <a href="https://www.linkedin.com/in/thinkerarijithajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
+            </div>
+
+            <div className="border-t border-gray-700 pt-4 flex-1 overflow-y-auto">
+              <p className="mb-3">
+                Aarijit Hajra, known as the "Robot Man of India," is the CEO of THINK AGAIN LAB. With a passion for technology and innovation, he hosts this program to bring cutting-edge knowledge to participants.
+              </p>
+              <p>
+                His expertise in robotics and technology education has made him a recognized figure in the industry, working to bridge the gap between advanced technologies and practical applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="text-center mt-12">
+    <p className="text-xl mb-6">Learn directly from industry veterans with real-world experience at ESRI and ISRO!</p>
+    <a href="#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-8 py-3 rounded-full font-bold transition hover:scale-105 inline-block">
+      Don't Miss This Opportunity to Learn from Experts
+    </a>
+  </div>
+</section>
 
         
         {/* Topics */}
@@ -554,7 +578,8 @@ export default function Home() {
           
 
           <div className="flex justify-center gap-6 mb-6">
-            <Link href="#" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
+            <Link href="/about-us" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
+            <Link href="/contact-us" passHref className="text-gray-400 hover:text-green-500">Contact Us</Link>
             <Link href="/privacy-policy" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
             <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
             <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>

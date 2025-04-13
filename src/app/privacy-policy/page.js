@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
                   className="rounded-md"
                 />
               </div>
-              <a href="#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white  inline-block px-8 py-3 rounded-full font-bold transition hover:scale-105 hover:bg-green-400">
+              <a href="/#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white  inline-block px-8 py-3 rounded-full font-bold transition hover:scale-105 hover:bg-green-400">
                 Register Now
               </a>
             </header>
@@ -291,6 +291,7 @@ export default function PrivacyPolicy() {
         </section>
       </div>
     </div>
+    {/* Footer */}
     <footer className="py-8 text-center border-t border-gray-700 mt-12">
           <div className="mb-6">
             <Image 
@@ -305,7 +306,8 @@ export default function PrivacyPolicy() {
           
 
           <div className="flex justify-center gap-6 mb-6">
-            <Link href="#" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
+            <Link href="/about-us" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
+            <Link href="/contact-us" passHref className="text-gray-400 hover:text-green-500">Contact Us</Link>
             <Link href="/privacy-policy" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
             <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
             <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>
