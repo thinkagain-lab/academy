@@ -5,7 +5,7 @@ import Razorpay from 'razorpay';
 const coupons = {
   
   'GEOAI2025': 42,
-  'LAUNCH25': 25,
+  
   'EARLYBIRD15': 15,
   'STUDENT10': 10
 };
