@@ -69,10 +69,10 @@ export default function Home() {
       description: "Get priority consideration for internship opportunities with partner organizations."
     },
     {
-      icon: "💼",
-      title: "Internship Shortlisting Priority",
-      description: "Get priority consideration for internship opportunities with partner organizations."
-    }
+    icon: "🎤",
+    title: "Live Q&A with Experts",
+    description: "Interact directly with Dr. Surya and Aarijt Hajra and get your doubts clarified during the session."
+    }, 
   ];
 
   const topics = [
