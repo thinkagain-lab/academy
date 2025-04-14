@@ -21,7 +21,7 @@ export default function PaymentPolicy() {
                 </header>
     <div className="max-w-4xl mx-auto px-4 py-12 text-white">
       <h1 className="text-3xl font-bold mb-8 text-center text-white">Payment Policy</h1>
-      <div className="text-sm text-gray-600 mb-8 text-center">Last updated 30th April 2020</div>
+      <div className="text-sm text-gray-600 mb-8 text-center">Last updated 14th April 2025</div>
       
       <div className="space-y-6">
         <section>

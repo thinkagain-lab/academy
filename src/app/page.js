@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import RegistrationForm from '@/components/RegistrationForm';
 
 export default function Home() {
   // State for FAQ toggle
@@ -305,90 +306,94 @@ export default function Home() {
 
   <div className="flex flex-col md:flex-row gap-8 justify-center flex-wrap">
     {/* Dr. Surya Deb Chakraborty Card */}
-    <div className="group w-full max-w-xl transition-all flex flex-col">
-      <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
-        <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-[1180px]">
-          {/* Image */}
-          <div className="relative h-full w-full">
-            <Image 
-              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/SuryaDeb.jpg" 
-              alt="Dr. Surya Deb Chakraborty" 
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="p-6 flex flex-col h-full">
-            <div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">DR. SURYA DEB CHAKRABORTY</h3>
-              <p className="text-blue-500 font-bold mb-2">Mentor</p>
-              <p className="text-gray-300 mb-1">Senior Analyst, University of Dubai</p>
-              <p className="text-gray-300 mb-4">(Ex-ESRI, Ex-ISRO)</p>
-            </div>
+<div className="group w-full max-w-xl transition-all flex flex-col">
+  <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
+    <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-[1180px]">
+      {/* Image */}
+      <div className="relative h-[60%] w-full">
+        <Image 
+          src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/SuryaDeb.jpg" 
+          alt="Dr. Surya Deb Chakraborty" 
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="p-6 flex flex-col h-[40%]">
+        <div>
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">DR. SURYA DEB CHAKRABORTY</h3>
+          <p className="text-blue-500 font-bold mb-2">Mentor</p>
+          <p className="text-gray-300 mb-1">Senior Analyst, University of Dubai</p>
+          <p className="text-gray-300 mb-4">(Ex-ESRI, Ex-ISRO)</p>
+        </div>
 
-            <div className="flex gap-3 mb-6">
-              <a href="https://www.facebook.com/suryadeb.chakraborty" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
-              <a href="https://www.instagram.com/suryadeb" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
-              <a href="https://www.linkedin.com/in/dr-surya-deb-chakraborty-20013922" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
-            </div>
+        <div className="flex gap-3 mb-6">
+          <a href="https://www.facebook.com/suryadeb.chakraborty" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
+          <a href="https://www.instagram.com/suryadeb" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+          <a href="https://www.linkedin.com/in/dr-surya-deb-chakraborty-20013922" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
+        </div>
 
-            <div className="border-t border-gray-700 pt-4 flex-1 overflow-y-auto">
-              <p className="mb-3">
-                Dr. Chakraborty is a Senior Analyst at the University of Dubai with over 15 years of experience in GIS and Remote Sensing applications. His impressive career includes valuable roles at industry giants ESRI and the Indian Space Research Organisation (ISRO).
-              </p>
-              <p className="mb-3">
-                Specializing in the integration of AI with geospatial technologies, Dr. Chakraborty has led numerous projects in urban planning, environmental monitoring, and disaster management. His research has been published in leading international journals and has contributed significantly to the field of GeoAI.
-              </p>
-              <p>
-                As an educator and industry expert, Dr. Chakraborty has trained hundreds of professionals and students in advanced geospatial techniques and is passionate about sharing practical knowledge that bridges theory and real-world applications.
-              </p>
-            </div>
-          </div>
+        <div className="border-t border-gray-700 pt-4 flex-1 overflow-y-auto">
+          <p className="mb-3">
+            Dr. Chakraborty is a Senior Analyst at the University of Dubai with over 15 years of experience in GIS and Remote Sensing applications. His impressive career includes valuable roles at industry giants ESRI and the Indian Space Research Organisation (ISRO).
+          </p>
+          <p className="mb-3">
+            Specializing in the integration of AI with geospatial technologies, Dr. Chakraborty has led numerous projects in urban planning, environmental monitoring, and disaster management. His research has been published in leading international journals and has contributed significantly to the field of GeoAI.
+          </p>
+          <p>
+            As an educator and industry expert, Dr. Chakraborty has trained hundreds of professionals and students in advanced geospatial techniques and is passionate about sharing practical knowledge that bridges theory and real-world applications.
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    {/* Aarijit Hajra Card */}
-    <div className="group w-full max-w-xl transition-all flex flex-col">
-      <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
-        <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-[1180px]">
-          {/* Image */}
-          <div className="relative h-full w-full">
-            <Image 
-              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/AarijitHajra.jpg" 
-              alt="Aarijit Hajra" 
-              fill
-              className="object-cover"
-            />
+{/* Aarijit Hajra Card */}
+<div className="group w-full max-w-xl transition-all flex flex-col">
+  <div className="relative p-[2px] rounded-xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-green-500 transition-all duration-300">
+    <div className="bg-gray-800 rounded-xl overflow-hidden flex flex-col h-[1180px]">
+      {/* Image */}
+      <div className="relative h-[60%] w-full">
+        <Image 
+          src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/AarijitHajra.jpg" 
+          alt="Aarijit Hajra" 
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="p-6 flex flex-col h-[40%]">
+        <div>
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">AARIJIT HAJRA</h3>
+          <p className="text-blue-500 font-bold mb-2">Host</p>
+          <p className="text-gray-300 mb-1">CEO, THINK AGAIN LAB</p>
+          <div className="flex items-center gap-1 mb-4">
+            <sub className="text-gray-300">aka</sub>
+            <h2 className="text-gray-300">ROBOT MAN OF INDIA</h2>
           </div>
-          <div className="p-6 flex flex-col h-full">
-            <div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">AARIJIT HAJRA</h3>
-              <p className="text-blue-500 font-bold mb-2">Host</p>
-              <p className="text-gray-300 mb-1">CEO, THINK AGAIN LAB</p>
-              <div className="flex items-center gap-1 mb-4">
-                <sub className="text-gray-300">aka</sub>
-                <h2 className="text-gray-300">ROBOT MAN OF INDIA</h2>
-              </div>
-            </div>
+        </div>
 
-            <div className="flex gap-3 mb-6">
-              <a href="https://www.facebook.com/ThinkerArijitHajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
-              <a href="https://www.instagram.com/aarijithajra_official" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
-              <a href="https://www.linkedin.com/in/thinkerarijithajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
-            </div>
+        <div className="flex gap-3 mb-6">
+          <a href="https://www.facebook.com/ThinkerArijitHajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">f</a>
+          <a href="https://www.instagram.com/aarijithajra_official" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">ig</a>
+          <a href="https://www.linkedin.com/in/thinkerarijithajra" className="bg-blue-500 w-8 h-8 rounded-full flex items-center justify-center hover:bg-green-500 hover:text-gray-900 transition">in</a>
+        </div>
 
-            <div className="border-t border-gray-700 pt-4 flex-1 overflow-y-auto">
-              <p className="mb-3">
-                Aarijit Hajra, known as the "Robot Man of India," is the CEO of THINK AGAIN LAB. With a passion for technology and innovation, he hosts this program to bring cutting-edge knowledge to participants.
-              </p>
-              <p>
-                His expertise in robotics and technology education has made him a recognized figure in the industry, working to bridge the gap between advanced technologies and practical applications.
-              </p>
-            </div>
-          </div>
+        <div className="border-t border-gray-700 pt-4 flex-1 overflow-y-auto">
+          <p className="mb-3">
+            Meet the robot man of India, Arijit Hajra who created eastern India's first semi humanoid robot - Annapurna which has been featured in Dadagiri Season 9 and 27+ national and regional news medias along with him. Arijit is also known as the Elon Musk of Bengal for the contribution in 25+ technology domains including AI, GIS, Remote Sensing, Web 2.0, Industry 4.0, and Web 3.0 and also filed 4 patents (1 granted) on robotics, electronics and virtual reality for world's smallest robotics lab and world's cheapest VR headset.
+          </p>
+          <p className="mb-3">
+            He has mentored more than 100k students in 12+ countries round the globe and received 50+ awards and recognitions for immense contribution in technology research and development through Think Again Lab.
+          </p>
+          <p>
+            He has also been featured in Josh Talks and got with 15 lakh+ views which eventually prevented 200+ suicides.
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   </div>
   <div className="text-center mt-12">
     <p className="text-xl mb-6">Learn directly from industry veterans with real-world experience at ESRI and ISRO!</p>
@@ -462,73 +467,7 @@ export default function Home() {
         
         {/* Registration Form */}
         <section id="register" className="my-16">
-          <div className="bg-gradient-to-r from-blue-500 to-green-500 p-[2px] rounded-xl">
-            <form
-              className="bg-gray-800 p-8 rounded-xl"
-              onSubmit={(e) => {
-                e.preventDefault(); // Prevent default form submission
-                window.location.href = "https://rzp.io/rzp/ai_in_earth_observation"; // Redirect to Razorpay link
-              }}
-            >
-              <div className='flex flex-col justify-center items-center'>
-                <h2 className="text-3xl font-bold text-center mb-8 font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text inline-block">
-                  Register for the Masterclass
-                </h2>
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="name" className="block mb-2">Full Name *</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  required 
-                  className="w-full p-3 rounded-lg border border-gray-600 bg-gray-700 text-white"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="email" className="block mb-2">Email Address *</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  required 
-                  className="w-full p-3 rounded-lg border border-gray-600 bg-gray-700 text-white"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="phone" className="block mb-2">Phone Number *</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  required 
-                  className="w-full p-3 rounded-lg border border-gray-600 bg-gray-700 text-white"
-                />
-              </div>
-
-              <div className="mb-8">
-                <label htmlFor="background" className="block mb-2">Your Background</label>
-                <select 
-                  id="background" 
-                  className="w-full p-3 rounded-lg border border-gray-600 bg-gray-700 text-white"
-                >
-                  <option value="">Select your background</option>
-                  <option value="student">Student</option>
-                  <option value="professional">Professional</option>
-                  <option value="researcher">Researcher</option>
-                  <option value="developer">Developer</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white py-4 rounded-xl font-bold text-lg transition hover:brightness-110 hover:scale-105"
-              >
-                COMPLETE REGISTRATION
-              </button>
-            </form>
-          </div>
+         <RegistrationForm />   
         </section>
 
 
@@ -545,7 +484,7 @@ export default function Home() {
             />
           </div>
           
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text inline-block">About Think Again Lab</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text inline-block">About Think Again Lab</h2>
           
           <div className="max-w-3xl mx-auto">
             <p className="mb-4">
