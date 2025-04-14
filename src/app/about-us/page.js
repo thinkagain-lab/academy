@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Navbar from '@/components/Navbar';
 
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState('mission');
@@ -18,20 +19,7 @@ export default function AboutUs() {
     <div className="bg-gray-900 text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header - Matching Contact Page */}
-        <header className="py-6 flex justify-between items-center">
-          <div className="w-30 h-30 relative">
-            <Image 
-              src="https://raw.githubusercontent.com/thinkagain-lab/academy/827d563df1ae8a49ff856defe56e1e0fb756e77d/public/TalLogoRound.png" 
-              alt="Think Again Lab Logo" 
-              width={100} 
-              height={100}
-              className="rounded-md"
-            />
-          </div>
-          <a href="/#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white inline-block px-8 py-3 rounded-full font-bold transition hover:scale-105">
-            Register Now
-          </a>
-        </header>
+        <Navbar />
 
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-blue-500 to-green-500 p-[2px] rounded-xl mb-12">
