@@ -4,7 +4,7 @@ import Razorpay from 'razorpay';
 // Available coupon codes and their discount percentages
 const coupons = {
     'FLAT99': 99,
-  'GEOSPATIAL2025': 42,
+  'GEOAI2025': 42,
   'LAUNCH25': 25,
   'EARLYBIRD15': 15,
   'STUDENT10': 10
