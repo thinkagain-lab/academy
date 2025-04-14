@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 // Available coupon codes and their discount percentages
 const coupons = {
+    'FLAT99': 99,
     'COUPON2025': 42,
   'LAUNCH25': 25,
   'EARLYBIRD15': 15,
