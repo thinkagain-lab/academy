@@ -7,6 +7,7 @@ import RegistrationForm from '@/components/RegistrationForm';
 import TimerSection from '@/components/TimerSection';
 import Navbar from '@/components/Navbar';
 import CertificatePreview from '@/components/CertificatePreview';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   // State for FAQ toggle
@@ -496,29 +497,7 @@ export default function Home() {
         </section>
         
         {/* Footer */}
-        <footer className="py-8 text-center border-t border-gray-700 mt-12">
-          <div className="mb-6">
-            <Image 
-              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/BBBBBBBBBBBBBBBB.png" 
-              alt="Think Again Lab Logo" 
-              width={200} 
-              height={200}
-              className="mx-auto mb-4"
-            />
-            <p className="text-gray-400">© 2025 Think Again Lab. All rights reserved.</p>
-          </div>
-          
-
-          <div className="flex flex-col items-center gap-4 mb-15 md:mb-6 md:flex-row md:justify-center">
-            <Link href="/about-us" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
-            <Link href="/contact-us" passHref className="text-gray-400 hover:text-green-500">Contact Us</Link>
-            <Link href="/privacy-row" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
-            <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
-            <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>
-          </div>
-
-          
-        </footer>
+        <Footer/>
       </div>
     </div>
   );

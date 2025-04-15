@@ -1,4 +1,5 @@
 'use client';
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -47,34 +48,34 @@ export default function PaymentPolicy() {
             confirm or reject the enrolment request within the period of 7 days from the date of the request for enrolment 
             ('Enrolment Request Period'), otherwise, the enrolment request will automatically expire. If we are unable to 
             confirm or decide to reject an enrolment request within the Enrolment Request Period, any amounts collected by 
-            Think Again Lab for the requested enrolment will be refunded to the concerned Student. When we confirm an enrolment 
-            requested by a Student, Think Again Lab will send the Student an email, text message or message via e-mail and the 
+            Think Again Academy for the requested enrolment will be refunded to the concerned Student. When we confirm an enrolment 
+            requested by a Student, Think Again Academy will send the Student an email, text message or message via e-mail and the 
             Application confirming such enrolment, depending on the selections you make via the Site, Application and Services.
           </p>
           <p className="mb-4">
-            The Course Fees payable will be displayed to the Student before the Student sends an enrolment request to Think Again Lab. 
-            Upon receipt of the Students enrolment request, Think Again Lab may initiate a pre-authorization and/or charge a nominal 
+            The Course Fees payable will be displayed to the Student before the Student sends an enrolment request to Think Again Academy. 
+            Upon receipt of the Students enrolment request, Think Again Academy may initiate a pre-authorization and/or charge a nominal 
             amount to Student's Payment Method pursuant to the Payments Terms. If a requested enrolment is canceled (before any confirmations 
-            are provided), any amounts collected by Think Again Lab will be refunded to such Student, depending on the selections the Student 
+            are provided), any amounts collected by Think Again Academy will be refunded to such Student, depending on the selections the Student 
             makes via the Site and Application, and any pre-authorization of Student's Payment Method will be released, if applicable.
           </p>
           <p className="mb-4">
-            Think Again Lab will collect the Course Fees from Students at the time of the enrolment request.
+            Think Again Academy will collect the Course Fees from Students at the time of the enrolment request.
           </p>
           <p className="mb-4">
-            Think Again Lab agrees that no refund will be permitted in respect of workshops or services already provided and in accordance 
+            Think Again Academy agrees that no refund will be permitted in respect of workshops or services already provided and in accordance 
             with the cancellation policy reflected in the relevant Listing, (i) permit the Student to cancel the enrolment and (ii) refund 
             to the Student that portion of the Course Fees specified in the applicable cancellation policy. In case relevant Listing does not 
             have a specified cancellation policy, the refund amount would be pro-rata to the unconsumed portion of the service.
           </p>
           <p className="mb-4">
-            You agree that Think Again Lab through its Site or Application would raise system generated invoice to the Student in relation to 
-            the Course for which the Student has enrolled or in relation to any kind of payment done, as per applicable laws. Think Again Lab 
+            You agree that Think Again Academy through its Site or Application would raise system generated invoice to the Student in relation to 
+            the Course for which the Student has enrolled or in relation to any kind of payment done, as per applicable laws. Think Again Academy 
             will raise an invoice for the above which shall be inclusive of all applicable taxes.
           </p>
           <p className="mb-4">
-            You as a Student agree to pay the Course Fees for any enrolment requested, in connection with your Think Again Lab Account. 
-            Think Again Lab will collect the Course Fees pursuant to the Payments Terms.
+            You as a Student agree to pay the Course Fees for any enrolment requested, in connection with your Think Again Academy Account. 
+            Think Again Academy will collect the Course Fees pursuant to the Payments Terms.
           </p>
           <p className="mb-4">
             Once you're confirmed enrolment transaction is complete you will receive a confirmation email summarizing your confirmed enrolment.
@@ -83,8 +84,8 @@ export default function PaymentPolicy() {
             Once the payment and confirmation is done, the classes start within 7 days of enrollment or according to the convenience of the customer.
           </p>
           <p className="mb-4">
-            In case of any development project/product, Think Again Lab will first generate a Quotation in against of the requirement sent by the 
-            client for the project/product via application/website/meeting. Think Again Lab has a very transparent payment method for any 
+            In case of any development project/product, Think Again Academy will first generate a Quotation in against of the requirement sent by the 
+            client for the project/product via application/website/meeting. Think Again Academy has a very transparent payment method for any 
             development project/ product and is divided into 2 parts: 60% of the amount is paid once the project is confirmed; rest 40% of the 
             amount is paid after the project is deployed.
           </p>
@@ -96,34 +97,13 @@ export default function PaymentPolicy() {
             You understand and acknowledge that appropriate governmental agencies, departments or authorities (the "Tax Authority") where your 
             office or residence is located may require Taxes to be collected from Students, Clients on the amount paid for the Course and to be 
             remitted to the respective Tax Authority. The laws in jurisdictions may vary, but these Taxes may be required to be collected and 
-            remitted as a percentage of the Course Fees/Project price set by Think Again Lab.
+            remitted as a percentage of the Course Fees/Project price set by Think Again Academy.
           </p>
         </section>
       </div>
     </div>
 {/* Footer */}
-<footer className="py-8 text-center border-t border-gray-700 mt-12">
-          <div className="mb-6">
-            <Image 
-              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/BBBBBBBBBBBBBBBB.png" 
-              alt="Think Again Lab Logo" 
-              width={200} 
-              height={200}
-              className="mx-auto mb-4"
-            />
-            <p className="text-gray-400">© 2025 Think Again Lab. All rights reserved.</p>
-          </div>
-          
-
-          <div className="flex justify-center gap-6 mb-6">
-            <Link href="/about-us" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
-            <Link href="/contact-us" passHref className="text-gray-400 hover:text-green-500">Contact Us</Link>
-            <Link href="/privacy-policy" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
-            <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
-            <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>
-          </div>
-          
-        </footer>
+<Footer/>
     </div>
   );
 }
