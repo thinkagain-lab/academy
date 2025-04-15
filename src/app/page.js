@@ -6,6 +6,7 @@ import Link from 'next/link';
 import RegistrationForm from '@/components/RegistrationForm';
 import TimerSection from '@/components/TimerSection';
 import Navbar from '@/components/Navbar';
+import CertificatePreview from '@/components/CertificatePreview';
 
 export default function Home() {
   // State for FAQ toggle
@@ -422,6 +423,8 @@ export default function Home() {
             RESERVE YOUR SEAT TODAY
           </a>
         </section>
+
+        {/* <CertificatePreview /> */}
         
         {/* FAQ */}
         <section className="my-16">
@@ -506,13 +509,14 @@ export default function Home() {
           </div>
           
 
-          <div className="flex justify-center gap-6 mb-6">
+          <div className="flex flex-col items-center gap-4 mb-15 md:mb-6 md:flex-row md:justify-center">
             <Link href="/about-us" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
             <Link href="/contact-us" passHref className="text-gray-400 hover:text-green-500">Contact Us</Link>
-            <Link href="/privacy-policy" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
+            <Link href="/privacy-row" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
             <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
             <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>
           </div>
+
           
         </footer>
       </div>

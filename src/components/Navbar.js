@@ -80,29 +80,31 @@ export default function Navbar() {
       
       {/* Mobile Sticky Bottom Bar - Only visible on mobile when scrolled */}
       <div 
-        className={`
-          fixed bottom-0 left-0 right-0 z-50 bg-gray-900 border-t border-gray-800 
-          md:hidden ${isScrolled ? 'translate-y-0' : 'translate-y-full'}
-          transition-transform duration-300 ease-in-out
-          flex items-center justify-between p-3
-        `}
-      >
+  className={`
+    fixed bottom-0 left-0 right-0 z-50 bg-gray-900 border-t border-gray-800 
+    md:hidden ${isScrolled ? 'translate-y-0' : 'translate-y-full'}
+    transition-transform duration-300 ease-in-out
+    flex items-center justify-between p-3
+  `}
+>
+  <div className="flex items-center">
+    <span className="text-gray-300 text-xs mr-2">Offer Ends:</span>
+    <div className="bg-gray-800 p-1 px-2 rounded border border-blue-500">
+      <span className="text-lg font-mono font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
+        {formatTime(timeLeft)}
+      </span>
+    </div>
+  </div>
 
-        <div className="flex items-center">
-          <span className="text-gray-300 text-xs mr-2">Offer Ends:</span>
-          <div className="bg-gray-800 p-1 px-2 rounded border border-blue-500">
-            <span className="text-lg font-mono font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
-              {formatTime(timeLeft)}
-            </span>
-          </div>
-        </div>
+  <a 
+    href="#register" 
+    className="ml-auto bg-gradient-to-r from-blue-500 to-green-500 text-white px-10 text-center py-2 rounded-full font-bold text-sm"
+  >
+    Register Now at
+    <p>Just ₹399</p>
+  </a>
+</div>
 
-        <a href="#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded-full font-bold text-sm">
-          Register Now
-        </a>
-        
-
-      </div>
     </>
   );
 }
