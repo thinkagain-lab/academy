@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState('mission');
@@ -281,26 +282,7 @@ export default function AboutUs() {
         </section>
         
         {/* Footer - Matching Contact Page */}
-        <footer className="py-8 text-center border-t border-gray-700 mt-12">
-          <div className="mb-6">
-            <Image 
-              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/BBBBBBBBBBBBBBBB.png" 
-              alt="Think Again Lab Logo" 
-              width={200} 
-              height={200}
-              className="mx-auto mb-4"
-            />
-            <p className="text-gray-400">© 2025 Think Again Lab. All rights reserved.</p>
-          </div>
-          
-          <div className="flex justify-center gap-6 mb-6">
-            <Link href="/about-us" passHref className="text-gray-400 hover:text-green-500">About Us</Link>
-            <Link href="/contact-us" passHref className="text-gray-400 hover:text-green-500">Contact Us</Link>
-            <Link href="/privacy-policy" passHref className="text-gray-400 hover:text-green-500">Privacy Policy</Link>
-            <Link href="/payment-policy" passHref className="text-gray-400 hover:text-green-500">Payment Policy</Link>
-            <Link href="/terms-and-conditions" passHref className="text-gray-400 hover:text-green-500">Terms and Conditions</Link>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
