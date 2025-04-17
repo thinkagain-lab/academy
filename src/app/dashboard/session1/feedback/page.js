@@ -2,7 +2,7 @@
 "use client";
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import SessionFeedbackForm from '../../components/SessionFeedbackForm';
+import SessionFeedbackForm from '@/components/SessionFeedbackForm';
 import Image from 'next/image';
 import { FaBrain } from 'react-icons/fa';
 import DashboardNavbar from '@/components/DashboardNavbar';

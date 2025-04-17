@@ -298,7 +298,7 @@ print(f"Hi {name}, welcome to Python {emoji}")`}</CodeBlock>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
           <a 
-            href="/linkedin-template" 
+            href="/dashboard/session1/linkedin-template" 
             className="w-full md:w-auto group relative bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition duration-300 flex items-center justify-center overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
@@ -308,7 +308,7 @@ print(f"Hi {name}, welcome to Python {emoji}")`}</CodeBlock>
           </a>
           
           <a 
-            href="/feedback" 
+            href="/dashboard/session1/feedback" 
             className="w-full md:w-auto group relative bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition duration-300 flex items-center justify-center overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
