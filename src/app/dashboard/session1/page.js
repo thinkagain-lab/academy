@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FaPython, FaCheckCircle, FaTrophy, FaBookOpen,FaPaperPlane, FaLaptopCode } from 'react-icons/fa';
+import { FaPython, FaCheckCircle, FaTrophy, FaBookOpen, FaPaperPlane, FaLaptopCode, FaLinkedin } from 'react-icons/fa';
+import DashboardNavbar from '@/components/DashboardNavbar';
 
 export default function Dashboard() {
   const router = useRouter();
@@ -55,33 +56,7 @@ export default function Dashboard() {
       </div>
       
       {/* Navbar */}
-      <nav className="bg-gray-800/70 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex flex-row gap-2 items-center">
-            <Image 
-                            src="/TalLogoRound(1).png" 
-                            alt="Think Again Lab Logo" 
-                            width={50} 
-                            height={50}
-                            className="rounded-md"
-                          />
-              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
-                Think Again Academy
-              </span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-300">Welcome, Student!</span>
-              <button
-                onClick={handleLogout}
-                className="bg-red-500/20 hover:bg-red-500/30 text-red-300 py-1 px-3 rounded-full text-sm transition"
-              >
-                Logout
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <DashboardNavbar/>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 py-8 relative z-10">
@@ -321,17 +296,27 @@ print(f"Hi {name}, welcome to Python {emoji}")`}</CodeBlock>
           </div>
         </div> */}
 
-      <div className="flex justify-center mt-8">
-        <a 
-          href="/feedback" 
-          className="group relative bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition duration-300 flex items-center overflow-hidden"
-        >
-          <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
-          <FaPaperPlane className="mr-3 text-xl relative z-10" />
-          <span className="relative z-10">Submit Session Feedback</span>
-          <span className="absolute -right-10 group-hover:right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 opacity-0 group-hover:opacity-100">→</span>
-        </a>
-      </div>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
+          <a 
+            href="/linkedin-template" 
+            className="w-full md:w-auto group relative bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition duration-300 flex items-center justify-center overflow-hidden"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
+            <FaLinkedin className="mr-3 text-xl relative z-10" />
+            <span className="relative z-10">LinkedIn Post Template</span>
+            <span className="absolute -right-10 group-hover:right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 opacity-0 group-hover:opacity-100">→</span>
+          </a>
+          
+          <a 
+            href="/feedback" 
+            className="w-full md:w-auto group relative bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition duration-300 flex items-center justify-center overflow-hidden"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-md"></span>
+            <FaPaperPlane className="mr-3 text-xl relative z-10" />
+            <span className="relative z-10">Submit Session Feedback</span>
+            <span className="absolute -right-10 group-hover:right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 opacity-0 group-hover:opacity-100">→</span>
+          </a>
+        </div>
         
 
       </main>

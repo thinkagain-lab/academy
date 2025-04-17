@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import SessionFeedbackForm from '../../components/SessionFeedbackForm';
 import Image from 'next/image';
 import { FaBrain } from 'react-icons/fa';
+import DashboardNavbar from '@/components/DashboardNavbar';
 
 export default function FeedbackPage() {
   const router = useRouter();
@@ -26,34 +27,7 @@ export default function FeedbackPage() {
       </div>
       
       {/* Navbar */}
-      <nav className="bg-gray-800/70 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex flex-row gap-2 items-center">
-              <div className="">
-                            <Image 
-                                            src="/TalLogoRound(1).png" 
-                                            alt="Think Again Lab Logo" 
-                                            width={50} 
-                                            height={50}
-                                            className="rounded-md"
-                                          />
-              </div>
-              <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
-                Think Again Academy
-              </span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => router.push('/dashboard/session1')}
-                className="bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 py-1 px-3 rounded-full text-sm transition"
-              >
-                Back to Dashboard
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <DashboardNavbar showBackButton={true}/>
 
       {/* Form Content */}
       <SessionFeedbackForm />
