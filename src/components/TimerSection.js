@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import AnimatedButton from './AnimatedButton';
 
 export default function TimerSection() {
   const [timeLeft, setTimeLeft] = useState(null);
@@ -73,10 +74,9 @@ export default function TimerSection() {
               </p>
               <div className='flex flex-col md:flex-row px-5 md:px-0'>
               <a 
-                href="#register" 
-                className="text-center md:text-left bg-gradient-to-r from-blue-500 to-green-500 text-white px-8 py-3 rounded-full font-bold transition hover:scale-105 inline-block"
-              >
-                CLAIM DISCOUNT NOW
+                href="#register">
+                    <AnimatedButton>CLAIM DISCOUNT NOW</AnimatedButton>
+                
               </a>
               </div>
             </div>

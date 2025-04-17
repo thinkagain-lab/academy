@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import AnimatedButton from './AnimatedButton';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,16 +66,18 @@ export default function Navbar() {
       {/* Regular Navbar - visible on all screens */}
       <header className="py-6 flex justify-between items-center max-w-7xl mx-auto px-4">
         <div className="w-30 h-30 relative">
+
           <Image 
-            src="https://raw.githubusercontent.com/thinkagain-lab/academy/827d563df1ae8a49ff856defe56e1e0fb756e77d/public/TalLogoRound.png" 
+            src="/TalLogoRound(1).png" 
             alt="Think Again Lab Logo" 
             width={100} 
             height={100}
             className="rounded-md"
           />
         </div>
-        <a href="#register" className="bg-gradient-to-r from-blue-500 to-green-500 text-white inline-block px-8 py-3 rounded-full font-bold transition hover:scale-105 hover:bg-green-400">
-          Register Now
+        <a href="/#register">
+            <AnimatedButton>Register Now</AnimatedButton>
+          
         </a>
       </header>
       

@@ -7,13 +7,16 @@ export default function Footer() {
     return (
 <div className="py-8 text-center border-t border-gray-700 mt-12">
           <div className="mb-6">
+            <a href='/'>
             <Image 
-              src="https://raw.githubusercontent.com/thinkagain-lab/academy/refs/heads/main/public/BBBBBBBBBBBBBBBB.png" 
+              src="/TalLogoRound(1).png" 
+              
               alt="Think Again Lab Logo" 
               width={200} 
               height={200}
               className="mx-auto mb-4"
             />
+            </a>
             <p className="text-gray-400">© 2025 Think Again Academy. All rights reserved.</p>
           </div>
           

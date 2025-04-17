@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import AnimatedButton from './AnimatedButton';
 
 export default function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -365,13 +366,13 @@ export default function RegistrationForm() {
             </div>
           </div>
 
-          <button 
+          <AnimatedButton 
             type="submit" 
             disabled={loading}
             className="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white py-4 rounded-xl font-bold text-lg transition hover:brightness-110 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {loading ? 'Processing...' : 'COMPLETE REGISTRATION'}
-          </button>
+          </AnimatedButton>
           
           <p className="mt-4 text-center text-sm text-gray-400">
             Secure payment powered by Razorpay
