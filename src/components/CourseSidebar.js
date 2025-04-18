@@ -23,7 +23,7 @@ export default function CourseSidebar() {
         // This would be the response from your API
         const sessionsData = [
           { id: 1, title: "Introduction to Python", isUnlocked: true, isCompleted: true },
-          { id: 2, title: "Data Basics & Operations", isUnlocked: false, isCompleted: false },
+          { id: 2, title: "Data Basics & Operations", isUnlocked: true, isCompleted: false },
           { id: 3, title: "Variables & Input/Output", isUnlocked: false, isCompleted: false },
           { id: 4, title: "Control Flow & Conditionals", isUnlocked: false, isCompleted: false },
           { id: 5, title: "Loops & Iteration", isUnlocked: false, isCompleted: false },
