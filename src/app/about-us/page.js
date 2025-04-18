@@ -87,7 +87,7 @@ export default function AboutUs() {
                         <h2 className="text-3xl font-bold mb-6 text-blue-500">Our Mission</h2>
                         <div className="prose prose-invert max-w-none">
                           <p className="text-lg mb-6 text-gray-300">
-                            At ThinkAgain Lab Academy, we're on a mission to bridge the gap between traditional education and the rapidly evolving technology landscape. We believe that every student deserves access to cutting-edge technical knowledge and hands-on experience with emerging technologies.
+                            At Think Again Academy, we're on a mission to bridge the gap between traditional education and the rapidly evolving technology landscape. We believe that every student deserves access to cutting-edge technical knowledge and hands-on experience with emerging technologies.
                           </p>
                           <p className="mb-6 text-gray-300">
                             Our academy is built on the foundation of providing accessible, high-quality technical education that prepares students for the jobs of tomorrow. We constantly update our curriculum to include the latest technological trends, ensuring our students stay ahead of the curve.
@@ -125,7 +125,7 @@ export default function AboutUs() {
                         <h2 className="text-3xl font-bold mb-6 text-blue-500">Our Vision</h2>
                         <div className="prose prose-invert max-w-none">
                           <p className="text-lg mb-6 text-gray-300">
-                            We envision a future where technology education is dynamic, accessible, and aligned with real-world innovations. ThinkAgain Lab Academy aims to be at the forefront of this educational revolution.
+                            We envision a future where technology education is dynamic, accessible, and aligned with real-world innovations. Think Again Academy aims to be at the forefront of this educational revolution.
                           </p>
                           
                           <div className="grid md:grid-cols-2 gap-8 my-8">
@@ -210,7 +210,7 @@ export default function AboutUs() {
                         <h2 className="text-3xl font-bold mb-6 text-blue-500">Our Approach</h2>
                         <div className="prose prose-invert max-w-none">
                           <p className="text-lg mb-6 text-gray-300">
-                            At ThinkAgain Lab Academy, we've developed a unique educational approach that combines theoretical knowledge with practical application, all within a supportive and innovative learning environment.
+                            At Think Again Academy, we've developed a unique educational approach that combines theoretical knowledge with practical application, all within a supportive and innovative learning environment.
                           </p>
                           
                           <div className="my-10 border border-gray-600 rounded-lg overflow-hidden">
@@ -268,7 +268,7 @@ export default function AboutUs() {
           <div className="bg-gray-800 rounded-xl py-12 px-6">
             <div className="max-w-5xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-4">Ready to Upgrade Your Tech Skills?</h2>
-              <p className="text-xl mb-8 text-gray-300">Join ThinkAgain Lab Academy and be part of the next generation of tech innovators.</p>
+              <p className="text-xl mb-8 text-gray-300">Join Think Again Academy and be part of the next generation of tech innovators.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link 
                   href="https://rzp.io/rzp/ai_in_earth_observation" 

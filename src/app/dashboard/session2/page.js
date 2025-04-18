@@ -251,7 +251,7 @@ print("Even?", num % 2 == 0)`}</CodeBlock>
               </div>
             ))}
           </div>
-          <p className="mb-6 text-center font-bold text-yellow-300">📝 Submit your Colab file on the dashboard!</p>
+          {/* <p className="mb-6 text-center font-bold text-yellow-300">📝 Submit your Colab file on the dashboard!</p> */}
 
           <h2 className="text-2xl font-bold mb-4 text-purple-300">🏆 BADGES & MILESTONES</h2>
           <h3 className="font-bold text-blue-300 mb-2">🎯 Milestones Unlocked:</h3>
@@ -285,7 +285,7 @@ print("Even?", num % 2 == 0)`}</CodeBlock>
           {/* Cool button for Colab Notebook Access */}
           <div className="flex justify-center mb-6">
             <a 
-              href="https://colab.research.google.com/drive/1SAmT9Y7ePJ9IoI4OZfQGWqsVuIZWLIY5?usp=sharing" 
+              href="https://colab.research.google.com/drive/1CUeg-qa1OTyz4mvYkJ3O7J0oysVeUWRE?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="group relative bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition duration-300 flex items-center overflow-hidden"
