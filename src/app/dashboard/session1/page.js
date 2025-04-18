@@ -18,6 +18,46 @@ export default function Dashboard() {
     } else {
       setIsLoading(false);
     }
+
+    // Prevent copy-paste functionality
+    const preventCopy = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    // Prevent right-click context menu
+    // const preventContextMenu = (e) => {
+    //   e.preventDefault();
+    //   return false;
+    // };
+
+    // Prevent print screen and screenshots
+    const preventPrintScreen = (e) => {
+      if (
+        (e.keyCode === 44) || // Print Screen
+        (e.ctrlKey && e.keyCode === 80) || // Ctrl+P
+        (e.ctrlKey && e.keyCode === 83) || // Ctrl+S
+        (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I (DevTools)
+        (e.ctrlKey && e.shiftKey && e.keyCode === 67) // Ctrl+Shift+C (DevTools)
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // Add event listeners
+    document.addEventListener('copy', preventCopy);
+    document.addEventListener('cut', preventCopy);
+    // document.addEventListener('contextmenu', preventContextMenu);
+    document.addEventListener('keydown', preventPrintScreen);
+    
+    // Cleanup event listeners when component unmounts
+    return () => {
+      document.removeEventListener('copy', preventCopy);
+      document.removeEventListener('cut', preventCopy);
+      // document.removeEventListener('contextmenu', preventContextMenu);
+      document.removeEventListener('keydown', preventPrintScreen);
+    };
   }, [router]);
 
   const handleLogout = () => {
@@ -26,7 +66,7 @@ export default function Dashboard() {
   };
 
   const CodeBlock = ({ children }) => (
-    <div className="bg-gray-800 rounded-lg p-2 sm:p-4 my-3 overflow-x-auto">
+    <div className="bg-gray-800 rounded-lg p-2 sm:p-4 my-3 overflow-x-auto user-select-none">
       <pre className="text-green-400 font-mono text-xs sm:text-sm">
         {children}
       </pre>
@@ -42,13 +82,68 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white relative">
+    <div className="min-h-screen bg-gray-900 text-white relative user-select-none">
       <Head>
         <title>Introduction to Python | Think Again Academy</title>
         <meta name="description" content="Python course for beginners" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Meta tag to prevent screenshots in iOS */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <style>{`
+          * {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+          }
+          
+          /* Disable text selection */
+          .user-select-none {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+          
+          /* Add watermark effect */
+          .watermark-container {
+            position: relative;
+          }
+          
+          .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            background: repeating-linear-gradient(
+              45deg,
+              rgba(255, 255, 255, 0.02),
+              rgba(255, 255, 255, 0.02) 10px,
+              rgba(255, 255, 255, 0.04) 10px,
+              rgba(255, 255, 255, 0.04) 20px
+            );
+          }
+          
+          .watermark::before {
+            content: "Think Again Academy";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+            pointer-events: none;
+          }
+        `}</style>
       </Head>
+
+      {/* Watermark overlay */}
+      <div className="watermark"></div>
 
       {/* Background elements */}
       <div className="fixed inset-0 z-0 opacity-20">
@@ -64,7 +159,7 @@ export default function Dashboard() {
       <CourseSidebar />
 
       {/* Main Content */}
-      <main className="pt-24 md:pt-8 md:ml-64 max-w-4xl mx-auto px-4 py-8 relative z-10">
+      <main className="pt-24 md:pt-8 md:ml-64 max-w-4xl mx-auto px-4 py-8 relative z-10 watermark-container">
         <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-4 sm:p-8 mb-6">
           <div className="flex items-center mb-6">
             <div className="p-2 sm:p-3 bg-blue-500/20 rounded-full mr-3 sm:mr-4">
