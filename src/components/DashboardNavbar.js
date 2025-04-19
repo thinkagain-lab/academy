@@ -30,6 +30,11 @@ export default function DashboardNavbar({ showBackButton = false }) {
       router.push('/login');
     }
   };
+  
+  const handleBackToDashboard = () => {
+    router.push('/dashboard/session1');
+    setMobileMenuOpen(false);
+  };
 
   // Close menu when clicking outside
   useEffect(() => {

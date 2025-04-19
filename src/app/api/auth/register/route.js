@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 import User from '@/lib/models/user';
-import admin from 'firebase-admin';
+import admin from '@/lib/firebaseAdmin';
 import { verifyAuthToken } from '@/lib/middleware/authMiddleware';
 
 export async function POST(request) {
