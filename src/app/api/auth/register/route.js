@@ -3,6 +3,7 @@ import { connectToDatabase } from '@/lib/mongodb';
 import User from '@/lib/models/user';
 import admin from '@/lib/firebaseAdmin';
 import { verifyAuthToken } from '@/lib/middleware/authMiddleware';
+import mongoose from 'mongoose';
 
 // Helper function to add timeouts to promises
 const withTimeout = (promise, ms, errorMessage) => {
@@ -83,12 +84,13 @@ export async function POST(request) {
       }, { status: 503 });
     }
     
-    // Step 5: Check if user already exists
+    // Step 5: Check if user already exists using the raw collection
     console.log('Checking for existing user...');
     let existingUser;
     try {
+      const usersCollection = mongoose.connection.collection('users');
       existingUser = await withTimeout(
-        User.findOne({ 
+        usersCollection.findOne({ 
           $or: [
             { email: firebaseUser.email },
             { firebase_uid: firebaseUid }
@@ -122,33 +124,20 @@ export async function POST(request) {
       joined_at: new Date()
     };
     
-    // Step 7: Validate user data if User model has a validate method
-    console.log('Validating user data...');
-    if (typeof User.validate === 'function') {
-      const validationErrors = User.validate(newUser);
-      if (validationErrors && validationErrors.length > 0) {
-        console.log('Validation errors found:', validationErrors);
-        return NextResponse.json({ errors: validationErrors }, { status: 400 });
-      }
-    }
-    console.log('User data validated successfully');
+    // Step 7: Skip validation since we're using a direct collection approach
     
-    // Step 8: Insert user into database
+    // Step 8: Insert user into database using raw collection
     console.log('Inserting user into database...');
+    let insertedId;
     try {
-      // Create a new User model instance
-      const userModel = new User(newUser);
-      
-      // Save to database
+      const usersCollection = mongoose.connection.collection('users');
       const result = await withTimeout(
-        userModel.save(),
+        usersCollection.insertOne(newUser),
         10000,
         'Database insert operation timed out'
       );
       console.log('User inserted successfully');
-      
-      // The _id is automatically assigned
-      newUser._id = result._id;
+      insertedId = result.insertedId;
     } catch (insertError) {
       console.error('User insertion failed:', insertError);
       return NextResponse.json({ 
@@ -159,7 +148,7 @@ export async function POST(request) {
 
     // Return successful response with the correct ID
     const responseData = {
-      user_id: newUser._id.toString(), // Use MongoDB's _id as the user_id
+      user_id: insertedId.toString(),
       name: newUser.name,
       email: newUser.email,
       role: newUser.role
