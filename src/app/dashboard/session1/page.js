@@ -6,30 +6,66 @@ import { useRouter } from 'next/navigation';
 import { FaPython, FaCheckCircle, FaTrophy, FaBookOpen, FaPaperPlane, FaLaptopCode, FaLinkedin } from 'react-icons/fa';
 import DashboardNavbar from '@/components/DashboardNavbar';
 import CourseSidebar from '@/components/CourseSidebar';
+import { auth } from '@/lib/firebase';
 
 export default function Dashboard() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     // Check if user is logged in
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-      router.push('/login'); // Redirect to login if not logged in
-    } else {
-      setIsLoading(false);
-    }
+    const checkAuth = async () => {
+      try {
+        const unsubscribe = auth.onAuthStateChanged(async (user) => {
+          if (!user) {
+            // No user is signed in
+            router.push('/login');
+            return;
+          }
+
+          try {
+            // Get fresh token and verify with backend
+            const token = await user.getIdToken(true);
+            
+            // Fetch user data from our database
+            const response = await fetch('/api/auth/user', {
+              method: 'GET',
+              headers: {
+                'Authorization': `Bearer ${token}`
+              }
+            });
+            
+            if (!response.ok) {
+              throw new Error('Failed to fetch user data');
+            }
+            
+            const userData = await response.json();
+            setUserData(userData);
+            setIsLoading(false);
+          } catch (error) {
+            console.error("Auth verification error:", error);
+            await auth.signOut();
+            localStorage.clear();
+            router.push('/login');
+          }
+        });
+        
+        return unsubscribe;
+      } catch (error) {
+        console.error("Dashboard auth check error:", error);
+        setIsLoading(false);
+        router.push('/login');
+      }
+    };
+
+    checkAuth();
 
     // Prevent copy-paste functionality
     const preventCopy = (e) => {
       e.preventDefault();
       return false;
     };
-
-    // Prevent right-click context menu
-    // const preventContextMenu = (e) => {
-    //   e.preventDefault();
-    //   return false;
-    // };
 
     // Prevent print screen and screenshots
     const preventPrintScreen = (e) => {
@@ -48,21 +84,37 @@ export default function Dashboard() {
     // Add event listeners
     document.addEventListener('copy', preventCopy);
     document.addEventListener('cut', preventCopy);
-    // document.addEventListener('contextmenu', preventContextMenu);
     document.addEventListener('keydown', preventPrintScreen);
     
     // Cleanup event listeners when component unmounts
     return () => {
       document.removeEventListener('copy', preventCopy);
       document.removeEventListener('cut', preventCopy);
-      // document.removeEventListener('contextmenu', preventContextMenu);
       document.removeEventListener('keydown', preventPrintScreen);
     };
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
-    router.push('/login'); // Redirect to login page
+  const handleLogout = async () => {
+    try {
+      // Sign out from Firebase
+      await auth.signOut();
+      
+      // Clear all local storage items
+      localStorage.clear();
+      
+      // Set a flag in session storage to prevent auto-login
+      sessionStorage.setItem('justLoggedOut', 'true');
+      
+      // Redirect to login page
+      router.push('/login');
+    } catch (error) {
+      console.error("Logout error:", error);
+      
+      // Force clearing local storage anyway
+      localStorage.clear();
+      sessionStorage.setItem('justLoggedOut', 'true');
+      router.push('/login');
+    }
   };
 
   const CodeBlock = ({ children }) => (
@@ -76,7 +128,10 @@ export default function Dashboard() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-        <div className="text-2xl">Loading...</div>
+        <div className="flex flex-col items-center">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+          <div className="text-xl">Loading your dashboard...</div>
+        </div>
       </div>
     );
   }
@@ -152,8 +207,8 @@ export default function Dashboard() {
         <div className="absolute top-2/3 left-1/2 w-72 h-72 rounded-full bg-purple-500 blur-[80px]"></div>
       </div>
       
-      {/* Navbar */}
-      <DashboardNavbar />
+      {/* Pass the handleLogout function to the Navbar */}
+      <DashboardNavbar onLogout={handleLogout} userData={userData} />
 
       {/* Sidebar - already mobile responsive */}
       <CourseSidebar />

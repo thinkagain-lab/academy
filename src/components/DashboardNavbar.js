@@ -4,20 +4,31 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { auth } from '@/lib/firebase';
 
 export default function DashboardNavbar({ showBackButton = false }) {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
-    router.push('/login');
-    setMobileMenuOpen(false);
-  };
-  
-  const handleBackToDashboard = () => {
-    router.push('/dashboard/session1');
-    setMobileMenuOpen(false);
+  const handleLogout = async () => {
+    try {
+      // Clear all localStorage items
+      localStorage.clear();
+      
+      // Set the logout flag that the Login component checks for
+      sessionStorage.setItem('justLoggedOut', 'true');
+      
+      // Sign out from Firebase
+      await auth.signOut();
+      
+      // Navigate to login page
+      router.push('/login');
+      setMobileMenuOpen(false);
+    } catch (error) {
+      console.error("Logout error:", error);
+      // Still attempt to redirect even if logout fails
+      router.push('/login');
+    }
   };
 
   // Close menu when clicking outside
