@@ -68,17 +68,13 @@ export async function POST(request) {
     
     // Step 4: Connect to MongoDB with timeout
     console.log('Connecting to MongoDB...');
-    let client, db;
     try {
-      const clientPromise = await withTimeout(
+      await withTimeout(
         connectToDatabase(),
         15000,
         'Database connection timed out'
       );
       console.log('MongoDB connection established successfully');
-      
-      client = await clientPromise;
-      db = client.db();
     } catch (dbConnectError) {
       console.error('Database connection failed:', dbConnectError);
       return NextResponse.json({ 
@@ -92,7 +88,7 @@ export async function POST(request) {
     let existingUser;
     try {
       existingUser = await withTimeout(
-        db.collection('users').findOne({ 
+        User.findOne({ 
           $or: [
             { email: firebaseUser.email },
             { firebase_uid: firebaseUid }
@@ -138,35 +134,36 @@ export async function POST(request) {
     console.log('User data validated successfully');
     
     // Step 8: Insert user into database
-    // Step 8: Insert user into database
-console.log('Inserting user into database...');
-try {
-  const result = await withTimeout(
-    db.collection('users').insertOne(newUser),
-    10000,
-    'Database insert operation timed out'
-  );
-  console.log('User inserted successfully');
-  
-  // Explicitly assign the MongoDB _id to the user_id if needed
-  newUser._id = result.insertedId;
-} catch (insertError) {
-  console.error('User insertion failed:', insertError);
-  return NextResponse.json({ 
-    error: 'Failed to create user',
-    details: insertError.message
-  }, { status: 500 });
-}
+    console.log('Inserting user into database...');
+    try {
+      // Create a new User model instance
+      const userModel = new User(newUser);
+      
+      // Save to database
+      const result = await withTimeout(
+        userModel.save(),
+        10000,
+        'Database insert operation timed out'
+      );
+      console.log('User inserted successfully');
+      
+      // The _id is automatically assigned
+      newUser._id = result._id;
+    } catch (insertError) {
+      console.error('User insertion failed:', insertError);
+      return NextResponse.json({ 
+        error: 'Failed to create user',
+        details: insertError.message
+      }, { status: 500 });
+    }
 
-// Return successful response with the correct ID
-const responseData = {
-  user_id: newUser.user_id, // Use the UUID you generated
-  // Or use MongoDB's _id if that's what you reference elsewhere
-  // user_id: newUser._id.toString(),
-  name: newUser.name,
-  email: newUser.email,
-  role: newUser.role
-};
+    // Return successful response with the correct ID
+    const responseData = {
+      user_id: newUser._id.toString(), // Use MongoDB's _id as the user_id
+      name: newUser.name,
+      email: newUser.email,
+      role: newUser.role
+    };
     
     return NextResponse.json(responseData, { status: 201 });
     
