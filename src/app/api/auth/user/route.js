@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 import { verifyAuthToken } from '@/lib/middleware/authMiddleware';
-import User from '@/lib/models/user';
+import mongoose from 'mongoose';
 
 export async function GET(request) {
   try {
@@ -10,16 +10,17 @@ export async function GET(request) {
     const firebaseUser = await verifyAuthToken(request);
     
     // Connect to MongoDB
-    const clientPromise = await connectToDatabase();
-    const client = await clientPromise;
-    const db = client.db();
+    await connectToDatabase();
+    
+    // Use mongoose.connection to access the database directly
+    const usersCollection = mongoose.connection.collection('users');
     
     // Find user in database - try email first, then fall back to UID if needed
-    let user = await db.collection('users').findOne({ email: firebaseUser.email });
+    let user = await usersCollection.findOne({ email: firebaseUser.email });
     
     // If no user found with email, try finding by firebase_uid if your schema supports it
     if (!user) {
-      user = await db.collection('users').findOne({ firebase_uid: firebaseUser.uid });
+      user = await usersCollection.findOne({ firebase_uid: firebaseUser.uid });
     }
     
     if (!user) {
@@ -48,21 +49,12 @@ export async function POST(request) {
       firebase_uid: firebaseUser.uid,
     };
     
-    // Validate user data
-    const validationErrors = User.validate(userData);
-    if (validationErrors.length > 0) {
-      return NextResponse.json({ errors: validationErrors }, { status: 400 });
-    }
-    
-    const newUser = new User(userData);
-    
     // Connect to MongoDB
-    const clientPromise = await connectToDatabase();
-    const client = await clientPromise;
-    const db = client.db();
+    await connectToDatabase();
+    const usersCollection = mongoose.connection.collection('users');
     
     // Check if user already exists (check both email and firebase_uid)
-    const existingUser = await db.collection('users').findOne({ 
+    const existingUser = await usersCollection.findOne({ 
       $or: [
         { email: firebaseUser.email },
         { firebase_uid: firebaseUser.uid }
@@ -74,9 +66,12 @@ export async function POST(request) {
     }
     
     // Insert new user
-    await db.collection('users').insertOne(newUser);
+    const result = await usersCollection.insertOne(userData);
     
-    return NextResponse.json(newUser, { status: 201 });
+    // Add the inserted ID to the user data
+    userData._id = result.insertedId;
+    
+    return NextResponse.json(userData, { status: 201 });
   } catch (error) {
     console.error('Error creating user:', error);
     return NextResponse.json({ error: error.message || 'Error creating user' }, { status: 500 });
@@ -92,12 +87,11 @@ export async function PUT(request) {
     const body = await request.json();
     
     // Connect to MongoDB
-    const clientPromise = await connectToDatabase();
-    const client = await clientPromise;
-    const db = client.db();
+    await connectToDatabase();
+    const usersCollection = mongoose.connection.collection('users');
     
     // Find and update user - try finding by email first
-    let updatedUser = await db.collection('users').findOneAndUpdate(
+    let updatedUser = await usersCollection.findOneAndUpdate(
       { email: firebaseUser.email },
       { $set: body },
       { returnDocument: 'after' }
@@ -105,7 +99,7 @@ export async function PUT(request) {
     
     // If no user found with email, try finding by firebase_uid
     if (!updatedUser.value) {
-      updatedUser = await db.collection('users').findOneAndUpdate(
+      updatedUser = await usersCollection.findOneAndUpdate(
         { firebase_uid: firebaseUser.uid },
         { $set: body },
         { returnDocument: 'after' }
